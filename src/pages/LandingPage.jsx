@@ -3,29 +3,32 @@ import hero from "../assets/Images/Hero.png";
 import mobileImage from "../assets/Images/iPhone 13 Pro.png";
 
 const LandingPage = () => {
-
-    const cardData = [
-        {
-            id: 1,
-            title: 'MOBILE TEAM',
-            description: 'We bring our trainers, workout technology and equipment to you, making every workout private, customized and convenient.',
-        },
-        {
-            id: 2,
-            title: 'PERSONAL TRAINING',
-            description: 'Our trainers provide one-on-one sessions tailored to your individual fitness goals.',
-        },
-        {
-            id: 3,
-            title: 'GROUP CLASSES',
-            description: 'Join our community in fun and engaging group classes for all fitness levels.',
-        },
-        {
-            id: 4,
-            title: 'NUTRITION PLANS',
-            description: 'Get personalized nutrition plans from our certified nutritionists to complement your fitness journey.',
-        },
-    ];
+  const cardData = [
+    {
+      id: 1,
+      title: "MOBILE TEAM",
+      description:
+        "We bring our trainers, workout technology and equipment to you, making every workout private, customized and convenient.",
+    },
+    {
+      id: 2,
+      title: "PERSONAL TRAINING",
+      description:
+        "Our trainers provide one-on-one sessions tailored to your individual fitness goals.",
+    },
+    {
+      id: 3,
+      title: "GROUP CLASSES",
+      description:
+        "Join our community in fun and engaging group classes for all fitness levels.",
+    },
+    {
+      id: 4,
+      title: "NUTRITION PLANS",
+      description:
+        "Get personalized nutrition plans from our certified nutritionists to complement your fitness journey.",
+    },
+  ];
   return (
     <>
       <div className="h-screen">
@@ -105,38 +108,83 @@ const LandingPage = () => {
           </p>
         </div>
 
-      <div className="grid grid-cols-2 container mx-auto gap-10">
-    {cardData?.map((data)=>(
-          <div className="border border-customRed rounded-md " key={data?.id}>
-          <div className="m-5">
-            <span className="oswald-bold text-white text-xl">0{data?.id}</span>
-            <h4 className="oswald-bold text-customRed text-xl my-3">
-              {data?.title}
-            </h4>
-            <p className="open-sans-regular text-white text-md my-3">
-             {data?.description}
-            </p>
-          </div>
+        <div className="grid grid-cols-2 container mx-auto gap-10">
+          {cardData?.map((data) => (
+            <div className="border border-customRed rounded-md " key={data?.id}>
+              <div className="m-5">
+                <span className="oswald-bold text-white text-xl">
+                  0{data?.id}
+                </span>
+                <h4 className="oswald-bold text-customRed text-xl my-3">
+                  {data?.title}
+                </h4>
+                <p className="open-sans-regular text-white text-md my-3">
+                  {data?.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-    ))}
-        
-      </div>
       </div>
 
       {/* mobile app for workout section */}
 
       <div className="bg-[#121212] ">
-      <div className="text-center py-20 ">
+        <div className="text-center py-20 ">
           <span className="oswald-bold text-white text-5xl">MOBILE APP</span>{" "}
-          <p className="oswald-bold text-customRed text-5xl my-3">FOR WORKOUT</p>
-        
+          <p className="oswald-bold text-customRed text-5xl my-3">
+            FOR WORKOUT
+          </p>
         </div>
 
-        <div className="grod grid-cols-2 container mx-auto gap-10">
-            <div><img src={mobileImage} alt="mobileImage" /></div>
-            <div></div>
+        <div className="grid grid-cols-2 container mx-auto gap-10 px-10">
+          <div>
+            <img src={mobileImage} alt="mobileImage" />
+          </div>
+          <div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                24X7 Support from our trainers
+              </span>
+            </div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                Professional Approach
+              </span>
+            </div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                Scintific Proven Workout Plans
+              </span>
+            </div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                Personalised Workout Plans
+              </span>
+            </div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                IOS, Android App and Web Portal
+              </span>
+            </div>
+            <div className="p-6">
+              <span>🔴</span>{" "}
+              <span className="text-xl text-white open-sans-regular">
+                Exercises Video Add ons
+              </span>
+            </div>
+            <div className="my-10 m-8">
+              <span className="oswald-bold text-customRed border p-2 px-6 rounded-md border-customRed text-xl cursor-pointer">
+                TRY NOW
+              </span>
+            </div>
+          </div>
         </div>
-        
       </div>
     </>
   );
