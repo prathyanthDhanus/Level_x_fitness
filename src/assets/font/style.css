@@ -1,0 +1,32 @@
+/* Applying Open Sans with a specific weight */
+.open-sans-light {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+  }
+  
+  .open-sans-regular {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  
+  .open-sans-bold {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Applying Oswald with different weights */
+  .oswald-light {
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+  }
+  
+  .oswald-regular {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+  }
+  
+  .oswald-bold {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+  }
+  
