@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from "../assets/Images/logo.png";
+import logo2 from "../assets/Images/logo2.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -20,7 +21,8 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer" onClick={() => navigate('/')}>
           <img src={logo} className="h-8" alt="Flowbite Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap  text-customRed oswald-bold">LEVEL_X</span>
+          {/* <span className="self-center text-2xl font-semibold whitespace-nowrap  text-customRed oswald-bold">LEVEL_X</span> */}
+      <img src={logo2} alt="logo"  className='w-10'/>
         </div>
         
         <button

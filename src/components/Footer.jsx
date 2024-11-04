@@ -52,10 +52,10 @@ const Footer = () => {
                             <input 
                                 type="email" 
                                 placeholder="Enter your email" 
-                                className="p-2 rounded-md border border-gray-600"
+                                className="p-2 rounded-md border border-gray-600 text-black open-sans-regular"
                                 required
                             />
-                            <button type="submit" className="bg-customRed text-white p-2 rounded-md hover:bg-red-600">
+                            <button type="submit" className="bg-customRed text-white p-2 rounded-md hover:bg-red-600 oswald-bold">
                                 Subscribe
                             </button>
                         </form>
@@ -65,13 +65,13 @@ const Footer = () => {
                 {/* Social Media Icons */}
                 <div className="flex justify-center mt-10 space-x-4">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                        <img src="/icons/facebook.svg" alt="Facebook" className="w-6 h-6" />
+                        <img src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-facebook-icon-png-images-icons-and-png-backgrounds-1.png" alt="Facebook" className="w-6 h-6" />
                     </a>
                     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                        <img src="/icons/instagram.svg" alt="Instagram" className="w-6 h-6" />
+                        <img src="https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-instagram-icon-instagram-logo-png-image_3584852.png" alt="Instagram" className="w-6 h-6" />
                     </a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        <img src="/icons/twitter.svg" alt="Twitter" className="w-6 h-6" />
+                        <img src="https://img.freepik.com/free-vector/twitter-new-2023-x-logo-white-background-vector_1017-45422.jpg?semt=ais_hybrid" alt="Twitter" className="w-6 h-6" />
                     </a>
                 </div>
             </div>

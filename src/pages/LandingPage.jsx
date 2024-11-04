@@ -1,37 +1,44 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import hero from "../assets/Images/Hero.png";
 import mobileImage from "../assets/Images/iPhone 13 Pro.png";
+import Card from "../components/Card";
+import {
+  cardData,
+  serviceCardData,
+  features,
+  pricingPlans,
+  trainers,
+  journeyPoints
+} from "../utils/hardCodedData";
+import TrainerCard from "../components/TrainerCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import manWithDumbell from "../assets/Images/Image (4).png";
 
 const LandingPage = () => {
-  const cardData = [
-    {
-      id: 1,
-      title: "MOBILE TEAM",
-      description:
-        "We bring our trainers, workout technology and equipment to you, making every workout private, customized and convenient.",
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
     },
-    {
-      id: 2,
-      title: "PERSONAL TRAINING",
-      description:
-        "Our trainers provide one-on-one sessions tailored to your individual fitness goals.",
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
     },
-    {
-      id: 3,
-      title: "GROUP CLASSES",
-      description:
-        "Join our community in fun and engaging group classes for all fitness levels.",
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
     },
-    {
-      id: 4,
-      title: "NUTRITION PLANS",
-      description:
-        "Get personalized nutrition plans from our certified nutritionists to complement your fitness journey.",
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
     },
-  ];
+  };
+
   return (
     <>
-      <div className="h-screen">
+      <div className=" lg:h-screen">
         <div
           style={{
             backgroundImage: `url(${hero})`,
@@ -65,7 +72,7 @@ const LandingPage = () => {
                 </span>
               </div>
 
-              <div className="grid grid-cols-3 text-center">
+              <div className="grid sm:grid-cols-1 lg:grid-cols-3 text-center">
                 <div>
                   <span className="oswald-bold text-customRed text-3xl">
                     05+
@@ -108,7 +115,7 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 container mx-auto gap-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  container mx-auto gap-10 ">
           {cardData?.map((data) => (
             <div className="border border-customRed rounded-md " key={data?.id}>
               <div className="m-5">
@@ -137,47 +144,19 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 container mx-auto gap-10 px-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  container mx-auto gap-10 px-10">
           <div>
             <img src={mobileImage} alt="mobileImage" />
           </div>
           <div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                24X7 Support from our trainers
-              </span>
-            </div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                Professional Approach
-              </span>
-            </div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                Scintific Proven Workout Plans
-              </span>
-            </div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                Personalised Workout Plans
-              </span>
-            </div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                IOS, Android App and Web Portal
-              </span>
-            </div>
-            <div className="p-6">
-              <span>🔴</span>{" "}
-              <span className="text-xl text-white open-sans-regular">
-                Exercises Video Add ons
-              </span>
-            </div>
+            {features.map((feature, index) => (
+              <div key={index} className="p-6 flex items-center">
+                <span>🔴</span>{" "}
+                <span className="text-xl text-white open-sans-regular ml-2">
+                  {feature}
+                </span>
+              </div>
+            ))}
             <div className="my-10 m-8">
               <span className="oswald-bold text-customRed border p-2 px-6 rounded-md border-customRed text-xl cursor-pointer">
                 TRY NOW
@@ -185,7 +164,164 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+        <div className="text-center py-5 pt-20">
+          <span className="oswald-bold text-white text-5xl">OUR</span>{" "}
+          <span className="oswald-bold text-customRed text-5xl">SERVICES</span>
+          <p className="text-white open-sans-regular text-sm my-5">
+            Delivered By Highly Trained Fitness and Health Professionals
+          </p>
+        </div>
+        <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 container mx-auto gap-10 px-10 ">
+          {serviceCardData.map((card, index) => (
+            <Card
+              key={index}
+              imageSrc={card.imageSrc}
+              title={card.title}
+              content={card.content}
+              buttonText={card.buttonText}
+              onButtonClick={() => alert(`${card.title} button clicked!`)}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* trainers section */}
+      <div className="  bg-[#121212] ">
+        <div className="container mx-auto p-10">
+          <div className="text-center py-5 pt-20">
+            <span className="oswald-bold text-white text-5xl">
+              OUR PROFESSIONAL
+            </span>{" "}
+            <span className="oswald-bold text-customRed text-5xl">
+              TRAINERS
+            </span>
+            <p className="text-white open-sans-regular text-sm my-5">
+              Delivered By Highly Trained Fitness and Health Professionals
+            </p>
+          </div>
+          <Carousel responsive={responsive}>
+            {trainers.map((trainer, index) => (
+              <TrainerCard
+                key={index}
+                image={trainer.image}
+                name={trainer.name}
+                role={trainer.role}
+                rating={trainer.rating}
+              />
+            ))}
+          </Carousel>
+        </div>
+      </div>
+      {/* monthly paln amount section */}
+      <div className="bg-[#121212] ">
+        <div className="text-center py-5 pt-20">
+          <h1 className="oswald-bold text-5xl">
+            <span className="text-white">LEVEL UP </span>
+            <span className="text-customRed">YOUR</span>
+          </h1>
+          <div className="lg:flex justify-center items-center">
+            <h1 className="oswald-bold text-5xl text-white">JOURNEY WITH </h1>
+            <h1 className="oswald-bold text-5xl text-customRed ml-2 ">
+              XLEVEL
+            </h1>
+          </div>
+        </div>
+
+        <section>
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Designed for business teams like yours
+              </h2>
+              <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
+                Here at Flowbite we focus on markets where technology,
+                innovation, and capital can unlock long-term value and drive
+                economic growth.
+              </p>
+            </div>
+            <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+              {pricingPlans.map((plan) => (
+                <div
+                  key={plan.title}
+                  className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border-2  shadow dark:border-customRed xl:p-8 dark:bg-gray-800 dark:text-white "
+                >
+                  <h3 className="mb-4 text-2xl  oswald-bold">{plan.title}</h3>
+                  <p className="font-light text-gray-500 sm:text-md dark:text-gray-400 open-sans-regular ">
+                    {plan.description}
+                  </p>
+                  <div className="flex justify-center items-baseline my-8">
+                    <span className="mr-2 text-5xl font-extrabold oswald-bold">
+                      {plan.price}
+                    </span>
+                    <span className="text-gray-500 dark:text-gray-400 open-sans-regular">
+                      /month
+                    </span>
+                  </div>
+                  <ul className="mb-8 space-y-4 text-left open-sans-regular">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center space-x-3">
+                        <svg
+                          className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          ></path>
+                        </svg>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#"
+                    className="text-white bg-[#090707] hover:bg-customRed focus:ring-4 focus:ring-primary-200 oswald-bold rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
+                  >
+                    Get started
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* lets start gym section */}
+      <div className="bg-[#121212] text-white py-10">
+  <div className="text-center pt-20">
+    <h1 className="oswald-bold text-5xl mb-4">
+      <span className="text-white">LET'S START </span>
+      <span className="text-customRed">YOUR</span>
+    </h1>
+    <div className="flex justify-center items-center mb-6">
+      <h1 className="oswald-bold text-5xl">JOURNEY WITH </h1>
+      <h1 className="oswald-bold text-5xl text-customRed ml-2">XLEVEL</h1>
+    </div>
+  </div>
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 lg:px-16 my-20">
+    <div className="flex justify-center items-center">
+      <img
+        src={manWithDumbell}
+        alt="man with dumbell"
+        className="w-full max-w-xs lg:max-w-md rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+
+    <div className="flex flex-col space-y-4">
+      {journeyPoints.map((point) => (
+        <div key={point.id} className="bg-gray-800 p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+          <h3 className="oswald-bold text-lg text-customRed">{point.title}</h3>
+          <p className="text-gray-300">{point.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+      
     </>
   );
 };
