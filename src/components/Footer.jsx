@@ -10,25 +10,25 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Navigation Links */}
                     <div>
-                        <h2 className="text-xl font-bold mb-4">Quick Links</h2>
-                        <ul className="space-y-2">
+                        <h2 className="text-xl oswald-bold mb-4">Quick Links</h2>
+                        <ul className="space-y-2 open-sans-regular">
                             <li>
                                 <button onClick={() => navigate('/about')} className="hover:underline focus:outline-none">
                                     About Us
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => navigate('/services')} className="hover:underline focus:outline-none">
+                                <button onClick={() => navigate('/')} className="hover:underline focus:outline-none">
                                     Services
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => navigate('/classes')} className="hover:underline focus:outline-none">
+                                <button onClick={() => navigate('/')} className="hover:underline focus:outline-none">
                                     Classes
                                 </button>
                             </li>
                             <li>
-                                <button onClick={() => navigate('/contact')} className="hover:underline focus:outline-none">
+                                <button onClick={() => navigate('/contact-us')} className="hover:underline focus:outline-none">
                                     Contact
                                 </button>
                             </li>
@@ -37,17 +37,19 @@ const Footer = () => {
 
                     {/* Contact Information */}
                     <div>
-                        <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+                        <h2 className="text-xl oswald-bold mb-4">Contact Us</h2>
+                       <div className='open-sans-regular'>
                         <p>123 Gym Street</p>
                         <p>City, State, ZIP</p>
                         <p>Email: info@gymwebsite.com</p>
                         <p>Phone: (123) 456-7890</p>
+                       </div>
                     </div>
 
                     {/* Newsletter Subscription */}
                     <div>
-                        <h2 className="text-xl font-bold mb-4">Subscribe to our Newsletter</h2>
-                        <p>Get the latest updates and offers!</p>
+                        <h2 className="text-xl oswald-bold mb-4">Subscribe to our Newsletter</h2>
+                        <p className='open-sans-regular'>Get the latest updates and offers!</p>
                         <form className="flex flex-col space-y-2 mt-2">
                             <input 
                                 type="email" 
