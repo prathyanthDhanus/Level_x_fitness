@@ -18,7 +18,6 @@ import manWithDumbell from "../assets/Images/Image (4).png";
 import AOS from "aos";
 
 const LandingPage = () => {
-
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -26,17 +25,17 @@ const LandingPage = () => {
       once: false, // Whether animation should happen only once - while scrolling down
     });
   }, []);
- 
+
   return (
     <>
-     
-
       {/* why choose us section */}
 
       <div className="bg-[#121212] ">
         <div className="text-center py-5" data-aos="fade-up">
           <span className="oswald-bold text-white text-5xl">WHY</span>{" "}
-          <span className="oswald-bold text-customRed text-5xl ">CHOOSE US</span>
+          <span className="oswald-bold text-customRed text-5xl ">
+            CHOOSE US
+          </span>
           <p className="text-white open-sans-regular text-sm my-5">
             Gym workouts offer a versatile and customisable experience, allowing
             everyone to set specific fitness goals.
@@ -45,7 +44,11 @@ const LandingPage = () => {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  container mx-auto gap-10 ">
           {cardData?.map((data) => (
-            <div className="border border-customRed rounded-md " key={data?.id}  data-aos="fade-right">
+            <div
+              className="border border-customRed rounded-md "
+              key={data?.id}
+              data-aos="fade-right"
+            >
               <div className="m-5">
                 <span className="oswald-bold text-white text-xl">
                   0{data?.id}
@@ -64,7 +67,7 @@ const LandingPage = () => {
 
       {/* mobile app for workout section */}
 
-      <div className="bg-[#121212] ">
+      <div className="bg-[#121212] overflow-x-hidden ">
         <div className="text-center py-20 " data-aos="fade-up">
           <span className="oswald-bold text-white text-5xl">MOBILE APP</span>{" "}
           <p className="oswald-bold text-customRed text-5xl my-3">
@@ -73,14 +76,18 @@ const LandingPage = () => {
         </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2  container mx-auto gap-10 px-10">
-          <div data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
+          <div
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <img src={mobileImage} alt="mobileImage" />
           </div>
-          <div data-aos="fade-left"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             {features.map((feature, index) => (
               <div key={index} className="p-6 flex items-center">
                 <span>🔴</span>{" "}
@@ -103,8 +110,11 @@ const LandingPage = () => {
             Delivered By Highly Trained Fitness and Health Professionals
           </p>
         </div>
-        <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 container mx-auto gap-10 px-10 " data-aos="fade-up"
-     data-aos-anchor-placement="center-bottom">
+        <div
+          className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 container mx-auto gap-10 px-10 "
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+        >
           {serviceCardData.map((card, index) => (
             <Card
               key={index}
@@ -132,17 +142,16 @@ const LandingPage = () => {
               Delivered By Highly Trained Fitness and Health Professionals
             </p>
           </div>
-          <Carousel responsive={responsive} >
+          <Carousel responsive={responsive}>
             {trainers.map((trainer, index) => (
-            <div key={index} data-aos="fade-down"> 
+              <div key={index} data-aos="fade-down">
                 <TrainerCard
-                
-                image={trainer.image}
-                name={trainer.name}
-                role={trainer.role}
-                rating={trainer.rating}
-              />
-            </div>
+                  image={trainer.image}
+                  name={trainer.name}
+                  role={trainer.role}
+                  rating={trainer.rating}
+                />
+              </div>
             ))}
           </Carousel>
         </div>
@@ -194,8 +203,11 @@ const LandingPage = () => {
                     </span>
                   </div>
                   <ul className="mb-8 space-y-4 text-left open-sans-regular">
-                    {plan.features.map((feature,index) => (
-                      <li key={index+1} className="flex items-center space-x-3">
+                    {plan.features.map((feature, index) => (
+                      <li
+                        key={index + 1}
+                        className="flex items-center space-x-3"
+                      >
                         <svg
                           className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                           fill="currentColor"
@@ -226,37 +238,43 @@ const LandingPage = () => {
       </div>
 
       {/* lets start gym section */}
-      <div className="bg-[#121212] text-white py-10 ">
-        <div className="text-center pt-20" data-aos="fade-up">
+      <div className="bg-[#121212] text-white py-10 overflow-x-hidden">
+        <div className="text-center pt-20 px-4" data-aos="fade-up">
           <h1 className="oswald-bold text-5xl mb-4">
             <span className="text-white">LET'S START </span>
             <span className="text-customRed">YOUR</span>
           </h1>
-          <div className="flex justify-center items-center mb-6">
+          <div className="flex flex-wrap justify-center items-center mb-6">
             <span className="oswald-bold text-5xl">JOURNEY WITH </span>
-            <span className="oswald-bold text-5xl text-customRed ml-2">XLEVEL</span>
+            <span className="oswald-bold text-5xl text-customRed ml-2">
+              XLEVEL
+            </span>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 lg:px-16 my-20">
-          <div className="flex justify-center items-center" data-aos="fade-down-right">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-20 px-4">
+          <div
+            className="flex justify-center items-center"
+            data-aos="fade-down-right"
+          >
             <img
               src={manWithDumbell}
               alt="man with dumbell"
-              className="w-full max-w-xs lg:max-w-md rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              className="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
             />
           </div>
-
-          <div className="flex flex-col space-y-4" >
+          <div className="flex flex-col gap-8">
             {journeyPoints.map((point) => (
               <div
                 key={point.id}
-                className="bg-gray-800 p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                className="bg-gray-800 p-4  rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
                 data-aos="fade-down-left"
               >
                 <h3 className="oswald-bold text-xl text-customRed">
                   {point.title}
                 </h3>
-                <p className="text-gray-300 open-sans-regular">{point.description}</p>
+                <p className="text-gray-300 open-sans-regular">
+                  {point.description}
+                </p>
               </div>
             ))}
           </div>
