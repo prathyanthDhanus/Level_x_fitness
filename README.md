@@ -1,6 +1,6 @@
-# LEVEL_X_FITNESS
+# X_LEVEL_FITNESS
 
-**LEVEL_X_FITNESS** is a simple, responsive gym website created using **React** and **Tailwind CSS**. This frontend-only project highlights the services provided by the gym, including detailed workout programs and professional trainers. Users can easily navigate through various sections to explore workouts, trainers, and pricing plans, making it user-friendly and visually appealing.
+** X_LEVEL_FITNESS** is a simple, responsive gym website created using **React** and **Tailwind CSS**. This frontend-only project highlights the services provided by the gym, including detailed workout programs and professional trainers. Users can easily navigate through various sections to explore workouts, trainers, and pricing plans, making it user-friendly and visually appealing.
 
 ![Screenshot of LEVEL_X_FITNESS](./src/assets/Images/Screenshot%202024-11-04%20230121.png) 
 
