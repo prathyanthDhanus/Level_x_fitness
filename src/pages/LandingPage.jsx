@@ -194,8 +194,8 @@ const LandingPage = () => {
                     </span>
                   </div>
                   <ul className="mb-8 space-y-4 text-left open-sans-regular">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center space-x-3">
+                    {plan.features.map((feature,index) => (
+                      <li key={index+1} className="flex items-center space-x-3">
                         <svg
                           className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                           fill="currentColor"
@@ -226,7 +226,7 @@ const LandingPage = () => {
       </div>
 
       {/* lets start gym section */}
-      <div className="bg-[#121212] text-white py-10 w-full overflow-hidden ">
+      <div className="bg-[#121212] text-white py-10 ">
         <div className="text-center pt-20" data-aos="fade-up">
           <h1 className="oswald-bold text-5xl mb-4">
             <span className="text-white">LET'S START </span>

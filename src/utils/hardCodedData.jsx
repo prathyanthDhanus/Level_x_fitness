@@ -3,11 +3,8 @@
  import services3 from "../assets/Images/services3.png";
  import trainer1 from "../assets/Images/trainer1.png";
 import trainer2 from "../assets/Images/trainer2.png";
-import trainer3 from "../assets/Images/trainer3.png";
-import trainer4 from "../assets/Images/trainer4.jpg";
-import trainer5 from "../assets/Images/trainer5.jpg";
-import trainer6 from "../assets/Images/trainer6.jpg";
-import trainer7 from "../assets/Images/trainer7.jpg";
+import trainer3 from "../assets/Images/Trainer3.png";
+
  
  export const cardData = [
     {
