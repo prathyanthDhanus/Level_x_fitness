@@ -67,7 +67,10 @@ const LandingPage = () => {
 
       {/* mobile app for workout section */}
 
-      <div className="bg-[#121212] overflow-x-hidden ">
+      <div className="bg-[#121212] overflow-x-hidden " style={{
+          scrollbarWidth: 'none', // Firefox
+          msOverflowStyle: 'none', // IE and Edge
+        }}>
         <div className="text-center py-20 " data-aos="fade-up">
           <span className="oswald-bold text-white text-5xl">MOBILE APP</span>{" "}
           <p className="oswald-bold text-customRed text-5xl my-3">
@@ -238,7 +241,12 @@ const LandingPage = () => {
       </div>
 
       {/* lets start gym section */}
-      <div className="bg-[#121212] text-white py-10 overflow-x-hidden">
+      <div className="bg-[#121212] text-white py-10 overflow-x-hidden" 
+        style={{
+          scrollbarWidth: 'none', // Firefox
+          msOverflowStyle: 'none', // IE and Edge
+        }}
+      >
         <div className="text-center pt-20 px-4" data-aos="fade-up">
           <h1 className="oswald-bold text-5xl mb-4">
             <span className="text-white">LET'S START </span>
